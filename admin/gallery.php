@@ -6,18 +6,25 @@ include_once "admin-includes.php";
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Untitled Document</title>
+<title>SZSS : Gallery</title>
 <script>
 
 var filesToUpload = new Array();
 var images = new Array();
-var formdata;
+var formdata, videoFormdata;
+var videoIdArray = new Array();
 
 window.onload = function()
+{
+	init();
+}
+
+function init()
 {
 	if(window.FormData)
 	{
 		formdata = new FormData();
+		videoFormdata = new FormData();
 		//document.getElementById("submitBnt").style.display = "none";
 	}	
 	
@@ -27,6 +34,9 @@ window.onload = function()
 	}	
 	
 	checkSubmitBtn();
+	$("#gallery-youtube-add-another").click(addVideoField);
+	$("#gallery-youtube-submit").hide();
+	$(".galleryYoutubeInput").on("change", checkYoutubeInput);
 }
 
 function initDragDrop()
@@ -153,6 +163,7 @@ function submitImages()
 	{
 		formdata.append('img[]', images[i]);
 	}
+	formdata.append('purpose', "picture");
 	$.ajax({
 		type:"POST",
 		data:formdata,
@@ -182,6 +193,8 @@ function endUploading(respond)
 {
 	var message = document.createElement('p');
 	message.innerHTML = "Uploaded "+images.length+" Photos";
+	message.style.fontStyle = 'italic';
+	message.style.fontWeight = 400;
 	$("#gallery-img-preview").empty().append(message);	
 	
 	images = new Array();
@@ -202,7 +215,99 @@ function checkSubmitBtn()
 
 function addVideoField()
 {
-		
+	var toAppend = "<p><input type='text' name='youtube' class='galleryYoutubeInput' placeholder='Insert Youtube link'/></p>"
+	$("#youtubeUploadForm").append(toAppend);
+}
+function resetVideoField()
+{
+	var toAppend = "<p><input type='text' name='youtube' class='galleryYoutubeInput' placeholder='Insert Youtube link'/></p><p><input type='text' name='youtube' class='galleryYoutubeInput' placeholder='Insert Youtube link'/></p><p><input type='text' name='youtube' class='galleryYoutubeInput' placeholder='Insert Youtube link'/></p>"
+	$("#youtubeUploadForm").empty().append(toAppend);
+}
+
+function checkYoutubeInput(e)
+{
+	var input = e.target.value;
+	if(input.match("yout"))
+	{
+		var videoId = getYoutubeId(input);
+		var url = "http://gdata.youtube.com/feeds/api/videos/" + videoId;
+		$.ajax(
+		{
+			url: url,
+			type: "get",
+			complete: function(res)
+			{
+				if(res.status == '200')
+				{
+					e.target.className = 'galleryYoutubeInput linkOk';
+					checkYoutubeForm();
+				}
+				else if(res.status == '400')
+				{
+					e.target.className = 'galleryYoutubeInput linkError';
+				}
+			}
+		});
+	}
+	else
+	{
+		e.target.className = 'galleryYoutubeInput linkError';
+	}
+	
+	checkYoutubeForm();
+	
+	
+}
+
+function getYoutubeId(url)
+{
+	var re = /https?:\/\/(?:[0-9A-Z-]+\.)?(?:youtu\.be\/|youtube\.com\S*[^\w\-\s])([\w\-]{11})(?=[^\w\-]|$)(?![?=&+%\w]*(?:['"][^<>]*>|<\/a>))[?=&+%\w-]*/ig;
+    return url.replace(re, '$1');	
+}
+
+function checkYoutubeForm()
+{
+	if($(".linkOk").length > 0)
+	{
+		$("#gallery-youtube-submit").show();
+	}
+	
+}
+
+function addYoutube()
+{
+	if(confirm("Add "+$(".linkOk").length +" Video(s)?"))
+	{
+		var toAdd = $(".linkOk").length;
+		$(".linkOk").each(function()
+			{
+				var videoId = getYoutubeId($(this).val());
+				videoIdArray.push(videoId);
+			});
+			
+		videoFormdata.append("videoId", videoIdArray);
+		videoFormdata.append('purpose', "video");
+		var url = "gallery-add-process.php";
+		$.ajax(
+		{
+			url: url,
+			type: "post",
+			data: videoFormdata,
+    	    processData: false,  
+    	    contentType: false,
+			success: function(res)
+			{
+				if(res == 'Added')
+				{
+					videoFormData = new FormData();
+					videoIdArray = new Array();
+					resetVideoField();
+					var msg = "<p style='font-weight: 400; font-style: italic'>"+ toAdd+" video(s) added <p>";
+					$("#youtubeUploadForm").prepend(msg);
+				}
+			}
+		});
+	}
 }
 </script>
 
@@ -242,11 +347,20 @@ Drag Photos Here
 <div class='gallery-side' id = 'gallery-videos'>
 
 <div id = 'gallery-youtube-uploader'>
-<form name='youtubeUploadForm' action = '' method='post' onsubmit='return addYoutube()'>
-<input type='text' name='youtube' placeholder='Insert link'/><input type='text' name='youtube' placeholder='Insert link'/><input type='text' name='youtube' placeholder='Insert link'/>
+<form 
+id='youtubeUploadForm' 
+name='youtubeUploadForm' 
+action = '' method='post' 
+onsubmit='return addYoutube()'>
+
+<p><input type='text' name='youtube' class='galleryYoutubeInput' placeholder='Insert Youtube link'/></p>
+<p><input type='text' name='youtube' class='galleryYoutubeInput' placeholder='Insert Youtube link'/></p>
+<p><input type='text' name='youtube' class='galleryYoutubeInput' placeholder='Insert Youtube link'/></p>
+
 </form>
 
-<button style='float: right; margin-right: 90px;' onclick='addVideoField()'> Add Another </button>
+<div id = 'gallery-youtube-add-another'> Add Another </div>
+<p><button id='gallery-youtube-submit' onclick='addYoutube()'>Confirm Upload Youtubes</button></p>
 </div>
 
 </div>

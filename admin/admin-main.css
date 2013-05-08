@@ -434,14 +434,14 @@ p.title
 	height: 60px;
 	padding-top: 40px;
 	display: inline-block;
-	border: #AAA dotted 1px;	
+	border: #AAA dotted 1px;
 }
 
 #file-drag-area.hover
 {
-	background-color: #AAA;
+	background-color: rgba(253,249,76, 0.8);
 	border: #AAA solid 1px;	
-	opacity: 0.5;
+	
 }
 
 #submitImages
@@ -455,4 +455,31 @@ p.title
 	padding: 5px;
 	clear: both;
 	display: inline-block;
+	border: #AAA solid 1px;
+}
+
+#gallery-youtube-add-another
+{
+	width: 300px;
+	height: 40px;
+	display: inline-block;
+	padding-top: 20px;
+	border: #AAA dotted 1px;	
+}
+
+#gallery-youtube-add-another:hover
+{
+	background-color: rgba(46,162,247, 0.8);
+	cursor: pointer;
+}
+
+#gallery-youtube-uploader input[type=text].linkError
+{
+	border: red dotted 1px;	
+	background-color: rgba(255, 0, 0, 0.1);
+}
+#gallery-youtube-uploader input[type=text].linkOk
+{
+	border: green dotted 1px;	
+	background-color: rgba(0, 255, 0, 0.1);
 }

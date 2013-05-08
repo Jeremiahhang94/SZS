@@ -5,6 +5,8 @@ include_once 'class/courseFactory.class.php';
 include_once 'class/course.class.php';
 include_once 'class/Profile.class.php';
 include_once 'class/ProfileFactory.class.php';
+include_once 'class/Gallery.class.php';
+include_once 'class/GalleryFactory.class.php';
 
 session_start();
 
