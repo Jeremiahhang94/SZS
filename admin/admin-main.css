@@ -1,0 +1,458 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body
+{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;	
+	font-size: 16px;
+	color:#333;	
+	background-image:url(../images/bg-diamond-repeat.png);
+}
+
+#main
+{
+	width: 960px;
+	height: auto;
+	margin: 0 auto 0 auto;	
+}
+
+#content
+{
+	float: left;
+	clear: both;
+	margin-top: 50px;	
+	width: 100%;
+}
+
+#page-title
+{
+	width: 100%;
+	float: left;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 100;
+	border-bottom: #AAA dotted 1px;
+	padding-bottom: 20px;	
+}
+
+input
+{
+	padding: 5px;	
+}
+
+.shadow {
+  -moz-box-shadow:    2px 2px 4px 2px #777;
+  -webkit-box-shadow: 2px 2px 4px 2px #777;
+  box-shadow:         2px 2px 4px 2px #777;
+}
+
+p.title
+{
+	font-size: 1.2em;
+	border-bottom: dotted 1px #AAA;
+	text-align: center;
+	width: 200px;
+	margin: 80px auto 0 auto;
+	padding-bottom: 20px;
+}
+
+#login-container
+{
+	width: 210px;
+	text-align: center;
+	margin: 20px auto 0 auto;
+}
+
+#login-container input
+{
+	width: 190px;
+	padding: 5px;
+}
+
+#header
+{
+	margin-top: 20px;
+	float: left;	
+	width: 100%;
+}
+
+#header-welcome
+{
+	float: left;	
+}
+
+#header-welcome span
+{
+	font-weight: 400;
+	margin-left: 5px;
+	font-style:italic;
+	font-size: 1.2em;
+}
+#header-nav
+{
+	float: right;
+	margin-right: 150px;	
+}
+.header-nav-class
+{
+	float: left;
+	margin-right: 30px;
+	color: black;	
+}
+.header-nav-class a
+{
+	color:black;
+	text-decoration: none;	
+}
+.header-nav-class a:hover
+{
+	color: blue;
+	border-bottom: dotted 1px blue;	
+}
+.index-section
+{
+	margin-top: 40px;
+	width: 300px;
+	height: 300px;
+	background-color: white;
+	float: left;
+	margin-right: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+	padding-top: 30px;
+	font-size: 1.4em;
+	font-weight: 100;	
+}
+
+.index-section:hover
+{
+	background-color: #FDF94C;
+}
+
+#certs-tabs-container
+{
+	width: 100%;
+	float: left;
+	text-align: center;	
+}
+#certs-tabs
+{
+	margin: 0 auto 0 auto;
+	margin-top: 30px;	
+	display: inline-block;
+}
+.one-cert
+{
+	width: 130px;
+	height: 130px;	
+	text-align: center;
+	float: left;
+	margin-left: 5px;
+	background-color: #EEE;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+.one-cert:hover
+{
+	background-color: #2EA2F7;
+}
+.one-cert p
+{
+	display: block;
+	float: left;
+	width: 100%;
+	margin-top: 35px;
+	font-size: 2em;
+	font-weight: 100;
+	text-transform:uppercase;
+}
+.one-cert p span
+{
+	display: block;
+	font-size: 12px;
+	
+	text-transform:capitalize;	
+}
+.cert-selected
+{
+	background-color: #FDF94C;
+}
+.cert-selected:hover
+{
+	background-color: #FDF94C;
+}
+#addCourse
+{
+	background-color: #333;
+	color: white;
+}
+#addCourse:hover
+{
+	background-color: #555;	
+}
+#add-course
+{
+	text-align: center;
+}
+#add-course textarea
+{
+	padding: 5px;	
+}
+#addCourseForm
+{
+	display: inline-block;
+	margin-top: 10px;	
+}
+#course-information
+{
+	float: left;
+	width: 450px;	
+	margin-top: 30px;
+}
+
+#submittedValues
+{
+	float: left;
+	margin-left: 180px;
+	width: 300px;
+	margin-top: 30px;
+}
+
+#profileContainer
+{
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+#profile-tabs
+{
+	display: inline-block;
+	margin: 0 auto 0 auto;
+}
+#profile-tabs-generated
+{
+	width: 100%;	
+}
+#profile-add
+{
+	width: 710px; 
+	margin: 0 auto 0 auto;
+	display: block;	
+}
+#profile-add input[type=text]
+{
+	width: 180px;
+	margin-bottom: 20px;
+	margin-left: -70px;	
+}
+#profile-add-image
+{
+	float: left;	
+}
+#profile-add-text
+{
+	float: right;	
+}
+#profile-add-text textarea 
+{
+	height: 110px;
+	width: 450px;
+	padding: 7px;
+	margin-bottom: 15px;
+}
+#add-image-preview
+{
+	float: left;
+	width: 180px;
+	height: 180px;
+	border: #111 dotted 1px;	
+	overflow: hidden;
+}
+#profile-add-image input[type=file]
+{
+	float: left;
+	clear: both;	
+}
+
+.one-profile
+{
+	width: 204px;
+	height: 204px;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: black dotted 1px;	
+	position: relative;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.one-profile-img
+{
+	width: 204px;
+	height: 204px;
+	overflow: hidden;
+	float: left;	
+	position: relative;
+}
+
+.one-profile-name
+{
+	display: none;
+	text-align: center;
+	font-weight: 300;
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-top: -130px;
+	z-index: 1000;
+	position: relative;
+	background-color: rgba(255, 255, 255, 0.4);
+	padding: 10px;
+	color: black;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.one-profile:hover .one-profile-name
+{
+	display: inline-block;	
+}
+.one-profile-add
+{
+	text-align: left;
+	font-size: 32px;
+	line-height: 35px;
+	font-weight: 100;	
+	background-color: #333;
+	width: 149;
+	padding-left: 55px;
+	padding-top: 60px;
+	height: 144px;
+	color: white;
+}
+.one-profile-add:hover
+{
+	opacity: 0.8;	
+}
+
+#profile-information
+{
+	float: left;
+	margin-top: 30px;	
+	width: 400px;
+}
+#add-profile-status
+{
+	font-size: 28px;
+	margin-bottom: 30px;
+	font-weight: 100;
+}	
+
+.selectedProfile
+{
+	border: #FDF94C dotted 1px;
+	opacity: 0.6;
+}
+
+#edit-profile
+{
+	float: left;
+	margin-top: 12px;	
+	width: 400px;
+}
+#edit-profile input[type=text]
+{
+	width: 	300px;
+	
+}
+#edit-profile textarea
+{
+	width: 300px;
+	height: 120px;	
+}
+#edit-image-preview
+{
+	width: 180px;
+	height: 180px;
+	border: #111 dotted 1px;	
+	overflow: hidden;	
+}
+
+/* gallery */
+.gallery-side
+{
+	margin-top: 30px;
+	width: 49%;
+	float: left;
+	height: auto;
+	text-align: center;
+	margin-bottom: 30px;
+}
+#gallery-img-preview
+{
+	display: inline-block;
+	width: 410px;
+	height: auto;
+}
+.gallery-class
+{
+	margin-top: 20px;
+	margin-right: 15px;
+	float: left;
+	width: 180px;
+	height: 180px;
+	border: white solid 5px;	
+	overflow: hidden;
+	
+	transition: opacity .20s ease-in-out;
+   -moz-transition: opacity .20s ease-in-out;
+   -webkit-transition: opacity .20s ease-in-out;
+}
+
+
+.gallery-class img
+{
+	max-height: 275px;	
+	margin: 0 auto 0 auto;
+	display: block;
+}
+
+.gallery-class:hover
+{
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+#file-drag-area
+{
+	width: 220px;
+	height: 60px;
+	padding-top: 40px;
+	display: inline-block;
+	border: #AAA dotted 1px;	
+}
+
+#file-drag-area.hover
+{
+	background-color: #AAA;
+	border: #AAA solid 1px;	
+	opacity: 0.5;
+}
+
+#submitImages
+{
+	margin-top: 30px;	
+}
+
+#gallery-youtube-uploader input[type=text]
+{
+	width: 300px;
+	padding: 5px;
+	clear: both;
+	display: inline-block;
+}

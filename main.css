@@ -1,0 +1,446 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body
+{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;	
+	font-size: 16px;
+	color:#333;	
+	background-image:url(images/bg-diamond-repeat.png);
+}
+
+p
+{
+	margin: 0 0 8px 0;	
+}
+
+.shadow {
+  -moz-box-shadow:    2px 2px 4px 2px #777;
+  -webkit-box-shadow: 2px 2px 4px 2px #777;
+  box-shadow:         2px 2px 4px 2px #777;
+}
+
+#open-gallery
+{
+	position: fixed;
+	z-index: 2000;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+#white-overlap
+{
+	position: fixed;
+	z-index: 2010;
+	background-color: white;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;	
+}
+#open-gallery-image img
+{	
+	position: relative;
+	z-index: 2020;
+	max-height: 75%;	
+	display: block;
+	margin: 6% auto 0 auto;
+}
+
+
+#main
+{
+	width: 960px;
+	height: auto;
+	margin: 0 auto 0 auto;	
+	padding: 10px;
+}
+
+#pageTitle
+{
+	float: left;
+	clear:  both;
+	width: 100%;
+	text-align: center;
+	font-weight:100;
+	font-size: 26px;
+	text-transform: uppercase;
+	border-bottom: #BBB dotted 1px;
+	padding-bottom: 20px;
+}
+
+.container
+{
+	background-color: #FDF94C;	
+}
+
+
+
+#contentBody
+{
+	float: left;  
+	clear: both;
+	margin-top: 50px;	
+	width: 100%;
+}
+
+
+#introText
+{
+	font-weight: 100;
+	float: left;
+	width: 380px;	
+	font-size: 1.1em;
+	line-height: 1.5em;
+}
+.introTitle
+{
+	text-transform:uppercase;
+	font-weight: 400;
+	margin-top: 20px;	
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+.introButton
+{
+	font-weight: 300;
+	font-size: 0.8em;
+	float: left;
+	padding-left: 18px;
+	padding-right: 18px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #FDF94C;
+	margin-top: 20px;
+	margin-right: 20px;
+	color: #333;
+	
+}
+
+.introButton:hover
+{
+	opacity: 0.9;
+	cursor: pointer;	
+}
+
+#introImageContainer
+{
+	transform:rotate(7deg);
+	-ms-transform:rotate(7deg); /* IE 9 */
+	-webkit-transform:rotate(7deg); /* Safari and Chrome */
+	width: 450px;
+	height: 260px;
+	padding: 5px;
+	float: right;
+	overflow: hidden;	
+}
+.introImage
+{
+	
+	border: white solid 5px;
+	margin-bottom: 10px;
+	float: left;
+	clear: both;
+}
+
+#stepsToRegister
+{
+	width: 100%;
+	height: 300px;
+	float: left;
+	clear: both;
+	margin-top: 100px;	
+}
+
+.stepClass
+{
+	width: 	300px;
+	height: 100%;
+	margin-right: 30px;
+	float: left;
+	text-align: center;
+}
+
+.stepTitle
+{
+	text-transform:uppercase;
+	font-weight: 400;
+	margin-top: 20px;	
+	font-size: 1.2em;
+}
+
+.stepDescription
+{
+	width: 80%;	
+	margin: 0 auto;
+	font-family: "Gilda Display";
+}
+
+#about
+{
+	margin-top: 30px;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+.about-class
+{
+	width: 85%;
+	margin: 0 auto 30px auto;
+	height: 200px;
+}
+
+.about-image
+{
+	height: 180px;
+	width: 180px;
+	border: white solid 2px;
+	float: left;
+	overflow: hidden;
+		
+}
+
+.about-image img
+{
+	width: 180px;
+	min-height: 180px;	
+}
+
+.about-text
+{
+	float: left;
+	width: 550px;
+	margin-left: 40px;
+	font-family: "Gilda Display";
+	font-size: 1.1em;
+}
+
+.about-name
+{
+	font-family: roboto;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	margin-bottom: 1em;
+}
+
+#courses
+{
+	width: 960px;
+	margin: 0 auto 0 auto;
+	clear: both;
+}
+
+#courses input[type='submit']
+{
+	width: 100px;
+	padding: 5px;	
+}
+
+.courses-step
+{
+	width: 300px;
+	height: 500px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
+	float: left;
+	clear: none;	
+}
+
+.courses-step-title
+{
+	font-size: 16px;
+	float: left;
+	width: 100%;
+	text-align: center;
+	font-weight: 300;
+	
+}
+
+#certs-tabs
+{
+	float: left;
+	clear: both;
+	margin-top: 30px;	
+}
+.one-cert
+{
+	width: 130px;
+	height: 130px;	
+	text-align: left;
+	text-align: center;
+	float: left;
+	margin-left: 5px;
+	background-color: #EEE;
+	margin-bottom: 5px;
+}
+.one-cert:hover
+{
+	background-color: #2EA2F7;
+	cursor: pointer;
+}
+.one-cert p
+{
+	display: block;
+	float: left;
+	width: 100%;
+	margin-top: 35px;
+	font-size: 2em;
+	font-weight: 100;
+}
+.one-cert p span
+{
+	display: block;
+	font-size: 12px;	
+}
+.cert-selected
+{
+	background-color:  #FDF94C;	
+}
+.cert-selected:hover
+{
+	background-color:  #FDF94C;	
+}
+
+#certs-info
+{
+	float: left;
+	margin-top: 30px;	
+	padding: 5px;
+	margin-left: 40px;
+}
+
+#certs-info p
+{
+	font-family: "Gilda Display";
+	font-size: 18px;
+	width: 240px;	
+	margin-bottom: 20px;
+}
+#certs-info p span
+{
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 16px;
+	font-style: italic;
+	margin-right: 3px;
+	display: block;
+}
+.certs-select-month #selectMonth
+{
+	width: 150px;
+}
+
+#sign-up-info
+{
+	float: left;
+	clear: both;
+	margin-top: 30px;
+	padding: 5px;
+	margin-left: 40px;
+}	
+
+#sign-up-info input[type=text], textarea
+{
+	padding: 5px;
+	width: 200px;
+	margin-bottom: 10px;
+	float: left;
+}
+#sign-up-info textarea
+{
+	width: 202px;
+	padding: 5px;
+	height: 200px;	
+}
+
+#gallery
+{
+	width: 940px;
+	margin: 0 auto 0 auto;
+	height: auto;
+	clear: both;
+}
+
+.gallery-class
+{
+	margin-top: 20px;
+	margin-left: 15px;
+	float: left;
+	width: 275px;
+	height: 275px;
+	border: white solid 5px;	
+	overflow: hidden;
+}
+
+
+.gallery-class img
+{
+	max-height: 275px;	
+	margin: 0 auto 0 auto;
+	display: block;
+	
+	transition: opacity .20s ease-in-out;
+   -moz-transition: opacity .20s ease-in-out;
+   -webkit-transition: opacity .20s ease-in-out;
+}
+
+.gallery-class img:hover
+{
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+#contact-form
+{
+	margin: 0 auto 0 auto;	
+	padding-top: 20px;
+}
+
+#contact-form input[type=text]
+{
+	padding: 5px;
+	width: 350px;	
+}
+#contact-form textarea
+{
+	border: #AAA solid 1px;
+	width: 350px;
+	padding: 6px;
+}
+#contact-form span
+{
+	padding-left: 10px;
+	font-size: 0.7em;
+	color: #AAA;	
+}
+
+#footer
+{
+	float: left;
+	width: 100%;
+	background-color: #DDD;
+	height: 200px;	
+}
+
+#contact-information
+{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+
+.contact-information-class
+{
+	float: left; 
+	margin-right: 30px;	
+}
+
+.contact-information-class span
+{
+	font-weight: 400;
+	font-style:italic;
+	font-size: 1.2em;	
+}
