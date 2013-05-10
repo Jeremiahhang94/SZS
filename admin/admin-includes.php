@@ -15,6 +15,10 @@ ini_set('display_errors', 'On');
 
 include_once 'functions.php';
 
+if(!isset($noNeedCheck))
+{
+	isLoggedIn();	
+}
 
 ob_start();
 ?>

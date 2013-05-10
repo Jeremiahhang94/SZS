@@ -491,3 +491,58 @@ p.title
 	margin-bottom: 30px;
 	display: inline-block;	
 }
+
+/* show case */
+#showcase
+{
+	background-color: rgba(255, 255, 255, 0.5);	
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 2000;
+	top:0;
+	left: 0;
+}
+#showcase-stage
+{
+	background-color: rgba(0, 0, 0, 0.2);
+	border: white solid 5px;
+	display: block;
+	margin: 5% auto 0 auto;	
+	position: relative;
+	
+}
+#showcase-stage-option-close
+{
+	position: relative;
+	color: white;
+	margin-bottom: -30px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+	cursor: pointer;
+	font-size: 0.8em;
+	z-index: 3000;
+}
+#stageController
+{
+	position: absolute;
+	z-index: 3000;
+	width: 100%;
+	height: 100%;	
+}
+.stage-control
+{
+	position: relative;
+	color: white;
+	display: inline-block;
+	font-size: 2em;
+	font-weight: 300;	
+	padding: 20px;
+	cursor: pointer;
+}
+
+#showcase-stage-option-next
+{
+	float: right;	
+}
