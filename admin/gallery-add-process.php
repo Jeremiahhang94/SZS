@@ -13,7 +13,7 @@ if($p == 'picture')
 		$type = substr($_FILES['img']['type'][$i], 0, 5);
 		if($_FILES['img']['error'][$i] == 0 and $_FILES['img']['size'][$i] <= (1024*1024) and $type == 'image')
 		{
-			$location = "../images/gallery/test/";
+			$location = "../images/gallery/";
 			$rand = rand(100,10000);
 			$dbName = $rand."_".$name;
 			$finalName = $location.$dbName;

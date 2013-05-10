@@ -37,6 +37,15 @@ function init()
 	$("#gallery-youtube-add-another").click(addVideoField);
 	$("#gallery-youtube-submit").hide();
 	$(".galleryYoutubeInput").on("change", checkYoutubeInput);
+	
+	loadGallery();
+}
+
+function loadGallery()
+{
+	startLoadingAnimation("gallery-display-images");
+	getAllGalleryByType(1);
+		
 }
 
 function initDragDrop()
@@ -96,7 +105,7 @@ function photoChange(input)
 			
 			reader.onload = function(e)
 			{	
-				appendImage(e.target.result);
+				appendImage("gallery-img-preview", e.target.result);
 			}
 		
 			reader.readAsDataURL(curFile);
@@ -109,7 +118,7 @@ function photoChange(input)
 	
 }
 
-function appendImage( src )
+function appendImage( target, src )
 {
 	var div = document.createElement("div");
 	div.className = 'gallery-class shadow';
@@ -118,7 +127,7 @@ function appendImage( src )
 	img.src = src;
 	div.appendChild(img);
 	
-	$("#gallery-img-preview").append(div);
+	$("#"+target).append(div);
 	
 		
 }
@@ -157,7 +166,7 @@ function checkFile(file)
 
 function submitImages()
 {
-	startUploading();
+	startLoadingAnimation("gallery-img-preview");
 	var url = "gallery-add-process.php";
 	for(var i = 0; i<images.length; i++)
 	{
@@ -180,14 +189,14 @@ function submitImages()
 	return false;	
 }
 
-function startUploading()
+function startLoaingAnimation(target)
 {
 	var loader = document.createElement('img');
 	loader.src = '../images/ajax-loader.gif';
 	loader.style.marginTop = "40px";
 	var message = document.createElement('p');
 	message.innerHTML = "Uploading Image(s)";
-	$("#gallery-img-preview").empty().append(loader, message);	
+	$("#"+target).empty().append(loader, message);	
 }
 function endUploading(respond)
 {
@@ -309,6 +318,43 @@ function addYoutube()
 		});
 	}
 }
+
+function getAllGalleryByType(type)
+{
+	var url = "gallery-functions.php";
+	var param = "?purpose=get&id=&type="+type;
+	url += param;
+	
+	$.ajax(
+	{
+		type: "GET",
+		url: url,
+		success: function(res)
+		{
+			if(res != 0)
+			{
+				res = $.parseJSON(res);
+				for(var i =0; i<res.length; i++)
+				{
+					var path = "../images/gallery/";
+					var src = path + res[i].name;	
+					var target = "gallery-display-images";
+					appendImage( target, src );
+				}
+			}
+			else
+			{
+				console.log("nothing");	
+			}
+		}
+			
+	});
+}
+
+function startGalleryLoading()
+{
+}
+
 </script>
 
 </head>
@@ -322,6 +368,11 @@ function addYoutube()
 <div id = 'page-title'> Gallery </div>
 
 <div class='gallery-side' id = 'gallery-images' style='border-right: #AAA dotted 1px;'>
+
+<div id='gallery-display-images'>
+<div class='gallery-class shadow'></div>
+<div class='gallery-class shadow'></div>
+</div><!-- end display images -->
 
 <div id = 'add-image-form-preview'>
 
@@ -340,7 +391,7 @@ Drag Photos Here
 
 <button id='submitImages' onclick='return submitImages()'> Confirm Upload Images </button>
 
-</div>
+</div><!-- end add image -->
 
 </div>
 

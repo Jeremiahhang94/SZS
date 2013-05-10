@@ -483,3 +483,11 @@ p.title
 	border: green dotted 1px;	
 	background-color: rgba(0, 255, 0, 0.1);
 }
+
+/* display gallery images */
+#gallery-display-images
+{
+	width: 410px;
+	margin-bottom: 30px;
+	display: inline-block;	
+}
