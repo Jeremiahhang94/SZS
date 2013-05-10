@@ -31,6 +31,32 @@ class GalleryFactory
 		return $galleryArray;
 	}	
 	
+	public static function getGalleryById($id)
+	{
+		$query = "SELECT * FROM gallery WHERE id = $id";
+		$answer = mysqli_query(Connect::getConnection(), $query);
+		if(!$answer) return false;
+		
+		$curGallery = mysqli_fetch_assoc($answer);
+		$gallery = new Gallery();
+		$gallery->id = $curGallery['id'];	
+		$gallery->name = $curGallery['name'];	
+		$gallery->type = $curGallery['type'];
+		
+		return $gallery;
+	}
+	
+	public static function deleteGallery($id)
+	{
+		$path = "../images/gallery/";
+		if(!unlink($path.GalleryFactory::getGalleryById($id)->name)) return false;	
+		
+		$query = "DELETE FROM gallery WHERE id = $id";
+		$answer = mysqli_query(Connect::getConnection(), $query);
+		if(!$answer) return false;
+		
+		else return "Deleted";
+	}
 }
 
 ?>

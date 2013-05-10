@@ -18,4 +18,14 @@ if($p == "get")
 		echo "0";	
 	}
 }
+
+if($p == 'delete')
+{
+	$galleryDeleted = GalleryFactory::deleteGallery($id);
+	if($galleryDeleted == "deleted")
+	{
+		echo $galleryDeleted;	
+	}
+		
+}
 ?>

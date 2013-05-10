@@ -419,12 +419,20 @@ function initShowcaseStage(stage)
 	prevBtn.innerHTML = "<"
 	prevBtn.id = "showcase-stage-option-prev";
 	
+	var deleteBtn = new Image();
+	deleteBtn.id = "showcase-stage-option-delete";
+	deleteBtn.src = "../images/showcase-delete.png";
+	deleteBtn.width = 20;
+	deleteBtn.height = 20;
+	deleteBtn.addEventListener("click", deleteBtnClicked);
+	
 	nextBtn.addEventListener("click", prevNextClicked);
 	prevBtn.addEventListener("click", prevNextClicked);
 	
 	stageController.appendChild(closeBtn);
 	stageController.appendChild(prevBtn);
 	stageController.appendChild(nextBtn);
+	stageController.appendChild(deleteBtn);
 	
 	stageController.hidden = true;
 	
@@ -478,11 +486,13 @@ function openGallery(ids, src)
 	
 	var nextBtn = document.getElementById("showcase-stage-option-next");
 	var prevBtn = document.getElementById("showcase-stage-option-prev");
+	var deleteBtn = document.getElementById("showcase-stage-option-delete");
 	
 	nextBtn.style.marginTop = img.height/2.6;
 	prevBtn.style.marginTop = img.height/2.6;
 	nextBtn.label = ids.next;
 	prevBtn.label = ids.prev;
+	deleteBtn.label = ids.img;
 	
 	$("#showcase-stage").animate({width: img.width}, 400, function(){
 			$(this).animate({height: img.height}, 400, function()
@@ -538,4 +548,22 @@ function prevNextClicked()
 		console.log(imgSrc);
 		openGallery(ids, imgSrc);
 	}	
+}
+
+function deleteBtnClicked()
+{
+	var url = 'gallery-functions.php';
+	var param = '?purpose=delete&id='+this.label;
+	url += param;
+	
+	$.ajax(
+	{
+		url: url,
+		type: "GET",
+		success: function(res)
+		{
+			closeGallery();
+			loadGallery();
+		}
+	});	
 }
