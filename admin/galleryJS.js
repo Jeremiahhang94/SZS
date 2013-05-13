@@ -470,19 +470,8 @@ function openGallery(ids, src)
 {
 	$("#showcase-stage-item").fadeOut(200, function(){ $(this).empty(); });
 		
-	var maxWidth = (window.innerWidth || document.body.clientWidth) * 0.8;
-	var maxHeight = (window.innerHeight || document.body.clientHeight) * 0.7;
 	
-	var img = new Image();
-	img.src = src;
-	
-	imgRatio = img.width / img.height;
-	
-	if(img.height > maxHeight)
-	{
-		img.height = maxHeight;	
-		img.width = imgRatio * img.height;
-	}
+	var img = loadImage(src);
 	
 	var nextBtn = document.getElementById("showcase-stage-option-next");
 	var prevBtn = document.getElementById("showcase-stage-option-prev");
@@ -505,6 +494,24 @@ function openGallery(ids, src)
 	$("#"+ showcaseId).fadeIn(200);
 }
 
+function loadImage(src)
+{
+	var maxWidth = (window.innerWidth || document.body.clientWidth) * 0.8;
+	var maxHeight = (window.innerHeight || document.body.clientHeight) * 0.7;
+	
+	var img = new Image();
+	img.src = src;
+	
+	imgRatio = img.width / img.height;
+	
+	if(img.height > maxHeight)
+	{
+		img.height = maxHeight;	
+		img.width = imgRatio * img.height;
+	}
+	
+	if(img.complete) return img;
+}
 function closeGallery()
 {
 	$("#"+showcaseId).fadeOut(200, function(){
