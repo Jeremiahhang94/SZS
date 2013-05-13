@@ -17,6 +17,7 @@ $(document).ready(function()
 });
 
 </script>
+<script src='https://www.youtube.com/iframe_api'></script>
 <script src='galleryJS.js'></script>
 <script src='showcase.js'></script>
 
@@ -64,6 +65,17 @@ Drag Photos Here
 </div>
 
 <div class='gallery-side' id = 'gallery-videos'>
+
+
+<div id = 'gallery-display-videos'>
+
+<div id='gallery-add-videos-btn' class='gallery-class shadow'>Add Video</div>
+
+<div id = 'gallery-display-videos-generated'>
+<div class='gallery-class shadow'></div>
+</div>
+
+</div><!-- end display video -->
 
 <div id = 'gallery-youtube-uploader'>
 <form 

@@ -49,7 +49,8 @@ class GalleryFactory
 	public static function deleteGallery($id)
 	{
 		$path = "../images/gallery/";
-		if(!unlink($path.GalleryFactory::getGalleryById($id)->name)) return false;	
+		if(GalleryFactory::getGalleryById($id)->type == 1)
+			if(!unlink($path.GalleryFactory::getGalleryById($id)->name)) return false;	
 		
 		$query = "DELETE FROM gallery WHERE id = $id";
 		$answer = mysqli_query(Connect::getConnection(), $query);
