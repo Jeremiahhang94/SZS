@@ -6,8 +6,9 @@ body
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;	
 	font-size: 16px;
-	color:#333;	
+	color: #333;
 	background-image:url(images/bg-diamond-repeat.png);
+	background-attachment:fixed;
 }
 
 p
@@ -147,25 +148,26 @@ p
 #stepsToRegister
 {
 	width: 100%;
-	height: 300px;
 	float: left;
 	clear: both;
-	margin-top: 100px;	
+	margin-top: 120px;	
+	margin-bottom: 100px;
 }
 
 .stepClass
 {
 	width: 	300px;
 	height: 100%;
+	padding: 30px 0 30px 0;
 	margin-right: 30px;
 	float: left;
 	text-align: center;
+	margin-top: 30px;
 }
 
 .stepTitle
 {
 	text-transform:uppercase;
-	font-weight: 400;
 	margin-top: 20px;	
 	font-size: 1.2em;
 }
@@ -278,7 +280,7 @@ p
 }
 .one-cert:hover
 {
-	background-color: #2EA2F7;
+	background-color: #65C7FD;
 	cursor: pointer;
 }
 .one-cert p

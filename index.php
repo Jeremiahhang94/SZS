@@ -42,7 +42,7 @@ fellow friends or yourself in any case of emergency
 
 <p>
 <div class='introButton'>Join <span style='font-weight: 400; font-style:italic;'> SZS </span> today! </div>
-<div class='introButton' style='background-color: #2EA2F7; padding-left: 25px; padding-right: 25px;'>Contact Us </div>
+<div class='introButton' style='background-color: #65C7FD; padding-left: 25px; padding-right: 25px;'>Contact Us </div>
 </p>
 
 </div><!-- end intro Text -->
@@ -61,8 +61,10 @@ fellow friends or yourself in any case of emergency
 </div><!-- end intro -->
 
 <div id = 'stepsToRegister'>
+
+<div id = 'pageTitle'> Intersted In Us ? </div>
 <div class = 'stepClass'>
-<img src='images/instruction/step1.png' width='90'/>
+<img src='images/instruction/step1.png' width='70'/>
 
 <div class = 'stepText' id='step1'>
 <p class='stepTitle'> Choose Your Course </p>
@@ -71,7 +73,7 @@ fellow friends or yourself in any case of emergency
 
 </div>
 <div class = 'stepClass'>
-<img src='images/instruction/step2.png' width='90'/>
+<img src='images/instruction/step2.png' width='70'/>
 
 <div class = 'stepText' id='step2'>
 <p class='stepTitle'> Prefered Time Slot </p>
@@ -80,7 +82,7 @@ fellow friends or yourself in any case of emergency
 
 </div>
 <div class = 'stepClass' style='margin-right: 0px'>
-<img src='images/instruction/step3.png' width='90'/>
+<img src='images/instruction/step3.png' width='70'/>
 
 <div class = 'stepText' id='step3'>
 <p class='stepTitle'> Register/Contact Us </p>
