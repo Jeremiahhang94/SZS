@@ -4,6 +4,8 @@ include_once 'admin/class/connect.class.php';
 include_once 'admin/class/ProfileFactory.class.php';
 include_once 'admin/class/Profile.class.php';
 include_once 'classes/course.class.php';
+include_once "admin/class/Gallery.class.php";
+include_once "admin/class/GalleryFactory.class.php";
 
 ob_start();
 ?>

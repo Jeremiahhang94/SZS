@@ -2,6 +2,17 @@
 include_once "admin-includes.php";
 ob_end_clean();
 
+
+/*
+@param
+purpose
+id
+
+if purpose = get
+type
+
+*/
+
 $p = $_GET['purpose'];
 $id = $_GET['id'];
 

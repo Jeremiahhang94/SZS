@@ -11,6 +11,26 @@ class GalleryFactory
 		else return true;
 	}
 	
+	public static function getAllGallery()
+	{
+		$query = "SELECT * FROM gallery";
+		$answer = mysqli_query(Connect::getConnection(), $query);
+		if(!$answer) return false;
+		
+		$galleryArray = array();
+		while($curGallery = mysqli_fetch_assoc($answer))
+		{
+			$gallery = new Gallery();
+			$gallery->id = $curGallery['id'];	
+			$gallery->name = $curGallery['name'];	
+			$gallery->type = $curGallery['type'];	
+			
+			$galleryArray[] = $gallery;
+		}
+		
+		return $galleryArray;
+	}
+	
 	public static function getAllGalleryByType($type)
 	{
 		$query = "SELECT * FROM gallery WHERE type = $type";

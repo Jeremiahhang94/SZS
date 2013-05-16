@@ -16,21 +16,130 @@ function initGallery()
 {
 	$("#open-gallery").hide();
 	//openGallery();
+	
+	getAllGallery();
+	
 	$(".gallery-class").on('click', openGallery);
 	$("#white-overlap").on("click", closeGallery);
 		
 }
 
+function getAllGallery()
+{
+	startLoadingAnimation();
+	var url = "gallery-functions.php";
+	var param = "?purpose=get";
+	url += param;
+	
+	$.ajax(
+	{
+		url: url,
+		type: "GET",
+		success: function(res)
+		{
+			displayAllGallery(res);
+		}
+	});
+}
+
+function displayAllGallery(data)
+{
+	/*
+	<div class = 'gallery-class shadow'>
+	<img src='images/gallery/gallery1.jpg' />
+	</div><!-- end one gallery -->
+	*/
+	
+	data = $.parseJSON(data);
+	for(var i = 0; i<data.length; i++)
+	{
+		var curData = data[i];
+		var galleryClass = $("<div>", 
+		{
+			class: "gallery-class shadow",
+			id: curData.name
+		});
+		
+		loadImage(curData, galleryClass);
+	}
+}
+
+function loadImage(data, galleryClass)
+{
+	var src;
+	var image = $("<img>", {
+		onload: function() 
+		{
+			galleryClass.append(this).appendTo(".main-content").click(openGallery);
+		}
+	});
+		
+	if(data.type == 1)
+	{	
+		var source = "images/gallery/";
+		src = source += data.name;
+	}
+	else if(data.type == 2)
+	{
+		src = "http://i.ytimg.com/vi/"+ data.name +"/0.jpg"
+		image.attr("class", "v");
+	}	
+	
+	
+	image.attr("src", src);
+	
+}
+
 function openGallery(e)
 {
-	var imgSrc = $(this).children('img').attr('src');
-	$("#open-gallery-image img").attr('src', imgSrc);
-	$("#open-gallery").fadeIn(200);
+	var child = $(this).children('img');
+	console.log(child.hasClass("v"));
+	if(!child.hasClass("v"))
+	{	
+		$("#open-gallery-image").show();
+		$("#open-gallery-video").hide();
+	
+		var imgSrc = child.attr('src');
+		$("#open-gallery-image img").attr('src', imgSrc);
+		$("#open-gallery").fadeIn(200);
+	}
+	else
+	{	
+		$("#open-gallery-image").hide();
+		$("#open-gallery-video").show();
+		
+		var vidId = $(this).attr("id");
+		var vidSrc = "http://www.youtube.com/embed/"+ vidId +"?rel=0&controls=0&showinfo=0&autoplay=1";
+		
+		$("#open-gallery-video").empty();
+		var iframe = $("<iframe>", {
+			width: 640,
+			height: 390,
+			frameborder: 0,
+			onload: function()
+			{
+				$(".iframeLoader").hide();
+			}
+			}).appendTo("#open-gallery-video");
+		
+		$("#open-gallery-video iframe").attr('src', vidSrc);
+		$("#open-gallery").fadeIn(200);
+	}
+	
 }
 
 function closeGallery()
 {
-	$("#open-gallery").fadeOut(200);	
+	$("#open-gallery").fadeOut(200,function(){
+		$("#open-gallery-video iframe").attr('src', '');
+		});	
+	
+}
+
+
+function startLoadingAnimation()
+{
+	
 }
 </script>
 
@@ -46,6 +155,9 @@ function closeGallery()
 <div id = 'open-gallery-image' >
 <img src='images/gallery/gallery3.jpg' class='shadow'/>
 </div>
+<div id = 'open-gallery-video' >
+<img class='iframeLoader' src='images/ajax-loader.gif' />
+</div>
 
 </div>
 
@@ -58,21 +170,7 @@ Fun. Thrilling. Exciting.
 </div><!-- end page title -->
 
 <div class='main-content' id = 'gallery'>
-<div class = 'gallery-class shadow'>
-<img src='images/gallery/gallery1.jpg' />
-</div><!-- end one gallery -->
-<div class = 'gallery-class shadow'>
-<img src='images/gallery/gallery2.jpg' />
-</div><!-- end one gallery -->
-<div class = 'gallery-class shadow'>
-<img src='images/gallery/gallery3.jpg' />
-</div><!-- end one gallery -->
-<div class = 'gallery-class shadow'>
-<img src='images/gallery/gallery4.jpg' />
-</div><!-- end one gallery -->
-<div class = 'gallery-class shadow'>
-<img src='images/gallery/gallery5.jpg' />
-</div><!-- end one gallery -->
+
 </div>
 
 </div><!-- end content body -->

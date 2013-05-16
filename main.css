@@ -48,6 +48,13 @@ p
 	display: block;
 	margin: 6% auto 0 auto;
 }
+#open-gallery-video iframe, .iframeLoader
+{
+	position: relative;
+	z-index: 2020;	
+	display: block;
+	margin: 6% auto 0 auto;
+}
 
 
 #main
