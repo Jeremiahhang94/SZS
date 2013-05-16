@@ -111,7 +111,8 @@ function openGallery(e)
 		var vidId = $(this).attr("id");
 		var vidSrc = "http://www.youtube.com/embed/"+ vidId +"?rel=0&controls=0&showinfo=0&autoplay=1";
 		
-		$("#open-gallery-video").empty();
+		var loadingImg = "<img class='iframeLoader' src='images/ajax-loader.gif' />";
+		$("#open-gallery-video").empty().append(loadingImg);
 		var iframe = $("<iframe>", {
 			width: 640,
 			height: 390,
@@ -156,7 +157,7 @@ function startLoadingAnimation()
 <img src='images/gallery/gallery3.jpg' class='shadow'/>
 </div>
 <div id = 'open-gallery-video' >
-<img class='iframeLoader' src='images/ajax-loader.gif' />
+
 </div>
 
 </div>

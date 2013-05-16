@@ -48,7 +48,7 @@ p
 	display: block;
 	margin: 6% auto 0 auto;
 }
-#open-gallery-video iframe, .iframeLoader
+#open-gallery-video iframe
 {
 	position: relative;
 	z-index: 2020;	
@@ -56,6 +56,13 @@ p
 	margin: 6% auto 0 auto;
 }
 
+#open-gallery-video img.iframeLoader
+{
+	position: relative;
+	z-index: 2030;	
+	display: block;
+	margin: 10% auto 0 auto;
+}
 
 #main
 {
@@ -78,6 +85,7 @@ p
 	padding-bottom: 20px;
 }
 
+
 .container
 {
 	background-color: #FDF94C;	
@@ -92,7 +100,6 @@ p
 	margin-top: 50px;	
 	width: 100%;
 }
-
 
 #introText
 {
@@ -141,6 +148,7 @@ p
 	height: 260px;
 	padding: 5px;
 	float: right;
+	margin-right: 30px;
 	overflow: hidden;	
 }
 .introImage
@@ -152,13 +160,13 @@ p
 	clear: both;
 }
 
-#stepsToRegister
+.section
 {
 	width: 100%;
 	float: left;
 	clear: both;
-	margin-top: 120px;	
-	margin-bottom: 100px;
+	margin-bottom: 120px;
+	
 }
 
 .stepClass
@@ -430,7 +438,7 @@ p
 {
 	float: left;
 	width: 100%;
-	background-color: #DDD;
+	background-color: rgba(101,199,253,0.5);
 	height: 200px;	
 }
 
@@ -452,4 +460,49 @@ p
 	font-weight: 400;
 	font-style:italic;
 	font-size: 1.2em;	
+}
+
+#members
+{
+	text-align: center;	
+}
+#member-class-container
+{
+	width: auto;
+	margin: 30px auto 0 auto;
+	display: inline-block;
+}
+.member-class
+{
+	width: 220px;
+	height: 220px;
+	
+	margin: 0 10px 0 10px;
+	background-color: rgba(253,249,76, 0.5);
+	
+	float: left;
+	text-align: left;
+}
+.member-class.askAbout
+{
+	background-color: rgba(101,199,253, 0.9);		
+	opacity: 1;
+	
+	transition: opacity .20s ease-in-out;
+   -moz-transition: opacity .20s ease-in-out;
+   -webkit-transition: opacity .20s ease-in-out;
+}
+.member-class.askAbout:hover
+{
+	opacity: 0.8;
+	cursor: pointer;
+}
+.member-class.askAbout p
+{
+	text-align:left;
+	display: inline-block;
+	margin-top:75px;
+	margin-left: 45px;
+	font-size: 1.8em;
+	font-weight: 100;
 }

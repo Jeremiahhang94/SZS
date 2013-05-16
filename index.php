@@ -27,13 +27,16 @@ $(document).ready(function(){
 
 <body>
 
+
+
+
 <div id ='main'>
 
 <?php include_once "header.php"; ?>
 
 <div class='main-content' id ='contentBody'>
 
-<div id = 'introContainer'>
+<div id = 'introContainer' class='section'>
 <div id ='introText'>
 <p class='introTitle'>Learn A Skill, Save A Life</p>
 SZS is an organisation of <span style='font-weight: 400; font-style:italic;'>Passionate </span> lifesavers<br />
@@ -53,16 +56,15 @@ fellow friends or yourself in any case of emergency
 </div>
 
 <div class='introImage shadow' id ='nextImage'>
-<img src='images/intro-pictures/intro2.jpg' />
+<img src='images/intro-pictures/intro2.jpg'/>
 </div>
 
 </div><!-- end image -->
 
-</div><!-- end intro -->
+</div><!-- end intro Outer-->
 
-<div id = 'stepsToRegister'>
-
-<div id = 'pageTitle'> Intersted In Us ? </div>
+<div id = 'stepsToRegister' class='section'>
+<div id = 'pageTitle'> Learn From Us </div>
 <div class = 'stepClass'>
 <img src='images/instruction/step1.png' width='70'/>
 
@@ -89,7 +91,25 @@ fellow friends or yourself in any case of emergency
 <p class='stepDescription'> Go to the Register page now to be part of us!</p>
 </div>
 </div>
+</div><!-- end stepsToRegister -->
+
+<div id = 'members' class='section'>
+
+<div id = 'pageTitle'> Members Corner </div>
+
+<div id ='member-class-container'>
+<div class = 'member-class askAbout'>
+<p>
+About<br/> 
+Members
+</p>
 </div>
+
+<div class = 'member-class'>
+</div>
+</div><!-- ed member class container -->
+
+</div><!-- end members -->
 
 </div><!-- end body -->
 

@@ -7,6 +7,8 @@ include_once 'class/Profile.class.php';
 include_once 'class/ProfileFactory.class.php';
 include_once 'class/Gallery.class.php';
 include_once 'class/GalleryFactory.class.php';
+include_once 'class/Announcement.class.php';
+include_once 'class/AnnouncementFactory.class.php';
 
 session_start();
 

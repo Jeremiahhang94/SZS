@@ -568,3 +568,98 @@ p.title
 	bottom: 10px;
 	right: 10px;
 }
+
+/* annoucement */
+
+#annoContainer
+{
+	width: 100%;
+	height: auto;	
+	float: left;
+	margin-top: 30px;
+}
+
+.anno-class
+{
+	width: 100%;
+	height: 40px;
+	margin-bottom: 30px;
+	
+	background-color: white;
+	border-radius: 10px;	
+	-moz-border-radius:10px;
+	cursor: pointer;	
+	
+	-moz-box-shadow: -2px -2px 10px rgba(0,0,0,.25) inset, 2px 2px 10px white inset;
+	box-shadow: -2px -2px 10px rgba(0,0,0,.25) inset, 2px 2px 10px white inset;
+}
+.anno-options-container
+{
+	float: right;
+	height: 80%;
+	width: 180px;
+	margin-top: 2px;	
+	margin-right: 10px;
+	border-left: #AAA dotted 1px;
+}
+.anno-options-class
+{
+	float: left;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-top: 9px;	
+	cursor: pointer;
+	font-weight: 400;
+	font-size: 0.9em;
+}
+.anno-options-class:hover
+{
+	text-decoration: underline;
+}
+.anno-text
+{
+	float: left;
+	margin-left: 30px;
+	margin-top: 10px;	
+	font-weight: 300;
+}
+
+.anno-class:hover
+{
+	background-color: rgba(101,199,253, 0.5);
+}
+.anno-class.selected
+{
+	background-color: rgba(101,199,253, 0.5);
+}
+.anno-class.selected:hover
+{
+	background-color: rgba(202, 40, 48, 0.5);
+}
+
+#anno-add
+{
+	width: 100%;
+	height: 50px;
+	border: black dotted 1px;
+	margin-bottom: 30px;
+	text-align: center;
+	cursor:pointer;
+}	
+#anno-add:hover
+{
+	background-color: rgba(253,249,76, 0.5);	
+}
+
+#add-anno-container
+{
+	width: 100%;	
+	height: 50px;
+	margin-top: 10px;
+	margin-bottom: 22px;
+}
+.addAnnoInput
+{
+	width: 80%;
+	height: 30px;
+}

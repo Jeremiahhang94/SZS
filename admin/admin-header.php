@@ -11,7 +11,7 @@
 </div>
 
 <div class = 'header-nav-class'>
-<a href='#'>Announcement</a>
+<a href='Announcement.php'>Announcement</a>
 </div>
 
 <div class = 'header-nav-class'>

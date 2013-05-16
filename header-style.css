@@ -28,7 +28,6 @@
 	float: left;
 	margin-right: 50px;
 }
-
 .navItem a
 {
 	color: inherit;
@@ -37,8 +36,8 @@
 
 .navItem a:hover
 {
-	color: #439CD6;
-	border-bottom: 1px dotted #439CD6;
+	color: #65C7FD;
+	border-bottom: 1px dotted #65C7FD;
 }
 
 #navigation-social-media
