@@ -175,6 +175,7 @@ Fun. Thrilling. Exciting.
 </div>
 
 </div><!-- end content body -->
+<?php include_once "footer.php" ?>
 </div><!-- end main -->
 </body>
 </html>

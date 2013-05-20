@@ -1,9 +1,17 @@
+<script>
 
-<link href="header-style.css" rel="stylesheet" type="text/css" />
+$(document).ready(function()
+{
+	$("#navigation-items").loadLinks('navItem');
+});
+
+</script>
+
+<link href="/SZS/header-style.css" rel="stylesheet" type="text/css" />
 
 <div id ='header'>
 <div id ='logo'>
-<a href='index.php'><img src='images/SZ-logo.jpg' /></a>
+<a href='/SZS/index.php'><img src='/SZS/images/SZ-logo.jpg' /></a>
 </div><!-- end logo -->
 <div id ='navigation'>
 

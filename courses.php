@@ -152,6 +152,7 @@ for($i = 1; $i <= 12; $i++)
 </div><!-- end courses -->
 
 </div><!-- end content body -->
+<?php include_once "footer.php" ?>
 </div><!-- end main --> 
 </body>
 </html>

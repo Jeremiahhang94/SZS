@@ -98,23 +98,30 @@ fellow friends or yourself in any case of emergency
 <div id = 'pageTitle'> Members Corner </div>
 
 <div id ='member-class-container'>
+
+<a href='contact.php'>
 <div class = 'member-class askAbout'>
 <p>
 About<br/> 
 Members
 </p>
 </div>
+</a>
 
+<a href='friends/alphaalignment.php'>
 <div class = 'member-class'>
+<p>
+Alpha Alignment
+</p>
 </div>
+</a>
 </div><!-- ed member class container -->
 
 </div><!-- end members -->
 
 </div><!-- end body -->
 
-<div id ='footer'>
-</div>
+<?php include_once "footer.php" ?>
 
 </div>
 

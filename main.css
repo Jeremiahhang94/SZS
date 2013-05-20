@@ -434,14 +434,6 @@ p
 	color: #AAA;	
 }
 
-#footer
-{
-	float: left;
-	width: 100%;
-	background-color: rgba(101,199,253,0.5);
-	height: 200px;	
-}
-
 #contact-information
 {
 	width: 100%;
@@ -482,22 +474,27 @@ p
 	
 	float: left;
 	text-align: left;
+	
+	color: black;
 }
-.member-class.askAbout
-{
-	background-color: rgba(101,199,253, 0.9);		
+.member-class
+{	
 	opacity: 1;
 	
 	transition: opacity .20s ease-in-out;
    -moz-transition: opacity .20s ease-in-out;
    -webkit-transition: opacity .20s ease-in-out;
 }
-.member-class.askAbout:hover
+.member-class.askAbout
+{	
+	background-color: rgba(101,199,253, 0.9);		
+}
+.member-class:hover
 {
 	opacity: 0.8;
 	cursor: pointer;
 }
-.member-class.askAbout p
+.member-class p
 {
 	text-align:left;
 	display: inline-block;
@@ -505,4 +502,45 @@ p
 	margin-left: 45px;
 	font-size: 1.8em;
 	font-weight: 100;
+}
+
+
+#footer
+{
+	float: left;
+	width: 100%;
+	background-color: rgba(101,199,253, 0.7);
+	height: 200px;	
+	margin-top: 60px;
+}
+
+
+.footer-class
+{
+	display: inline-block;
+	height: 160px;
+	margin-top: 20px;
+	text-align: left;
+	float: left;
+	margin-left:40px;
+	width: 280px;
+}
+.footer-title
+{
+	font-weight: 400;
+	font-style: italic;
+	font-size: 1.1em;
+}
+.footer-class a, .footer-class p
+{
+	float: left;
+	clear: both;
+	margin-top: 10px;
+	text-decoration: none;
+	color: black;	
+	font-size: 0.9em;
+}
+.footer-class a:hover
+{
+	text-decoration: underline;	
 }

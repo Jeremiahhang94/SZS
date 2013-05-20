@@ -85,6 +85,9 @@ Contact us
 </div>
 
 </div>
+
+<?php include_once "footer.php" ?>
+
 </div>
 
 </body>

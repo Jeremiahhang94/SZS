@@ -175,3 +175,40 @@ function printCertDetail(data)
 	return toAppend;
 	
 }
+
+$.fn.loadLinks = function(className) 
+{
+	var links = 
+	{
+		About: "/SZS/about.php",
+		Courses: "/SZS/courses.php",
+		Gallery: "/SZS/gallery.php",
+		Contact: "/SZS/contact.php"
+	}
+	
+	return this.each(function()
+	{
+		var $this = $(this).empty();
+		
+		for(var i in links)
+		{
+			/*
+			<div class ='navItem'>
+			<a href="about.php">About</a>
+			</div>
+			*/
+			var linkClass = $("<div>", {
+				class: className
+				});
+			
+			var linkHref = $("<a>", {
+				href: links[i],
+				text: i
+				})
+				
+			linkClass.append(linkHref).appendTo($this);
+				
+		}
+			
+	});
+}

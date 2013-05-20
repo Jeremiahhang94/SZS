@@ -19,8 +19,8 @@ ob_start();
 <!-- css -->
 <link rel="icon" 
       href="http://localhost:8888/SZS/favicon.ico">
-<link href="main.css" rel="stylesheet" type="text/css" />
+<link href="/SZS/main.css" rel="stylesheet" type="text/css" />
 
 <!-- script -->
-<script src='jquery-1.9.1.min.js'></script>
-<script src='szss-script.js'></script>
+<script src='/SZS/jquery-1.9.1.min.js'></script>
+<script src='/SZS/szss-script.js'></script>
