@@ -348,22 +348,28 @@ function appendVideo(id, name, title, src)
 	div.className = 'gallery-class shadow';
 	div.id = id;
 	div.label = name;
-	var img = document.createElement("img");
-	img.src= src;
-	img.className = 'gallery-class-video';
-	
-	var imgRatio = img.width / img.height;
-	img.height = 180;
-	img.width =  imgRatio * img.height;
-	var offset = (img.width - 180)/2;
-	img.style.marginLeft = offset * -1;
-	
-	div.appendChild(img);
-	document.getElementById(generatedVideoDiv).appendChild(div);
-	
+	loadYoutubeVideoPicture(div, src);
 	
 	$(".gallery-class-video").unbind("click").click(prepareVideoForStage);
 		
+}
+function loadYoutubeVideoPicture(div, img)
+{
+	var image = new Image();
+	image.onload = function()
+	{	
+		var imgRatio = this.width / this.height;
+		this.height = 180;
+		this.width =  imgRatio * this.height;
+		var offset = (this.width - 180)/2;
+		this.style.marginLeft = offset * -1;
+		
+		div.appendChild(this);
+		document.getElementById(generatedVideoDiv).appendChild(div);
+	}
+	
+	image.src = img;
+	
 }
 function addVideoField()
 {
